@@ -142,6 +142,7 @@ DEBUG = 'RENDER' not in os.environ
 
 CORS_ORIGIN_WHITELIST = (
     'http://127.0.0.1:5500',
+    'https://rc22011.neocities.org',
 )
 
 if not DEBUG:
