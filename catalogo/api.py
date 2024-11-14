@@ -1,6 +1,7 @@
 from .models import producto, usuario
 from rest_framework import viewsets, permissions
 from .serializers import ProductoSerializer, UsuarioSerializer
+from django_filters.rest_framework import DjangoFilterBackend
 
 class ProductoViewSet(viewsets.ModelViewSet):
     """
@@ -17,4 +18,7 @@ class UsuarioViewSet(viewsets.ModelViewSet):
     queryset = usuario.objects.all()
     permission_classes = [permissions.AllowAny]
     serializer_class = UsuarioSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['correo']
+    filterset_fields = ['contrasena']
     
