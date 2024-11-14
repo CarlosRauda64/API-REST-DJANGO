@@ -145,6 +145,13 @@ CORS_ORIGIN_WHITELIST = (
     'https://rc22011.neocities.org',
 )
 
+CORS_ALLOW_HEADERS = [
+    'content-type',
+    'Authorization',
+    'X-Requested-With',
+    # Agrega cualquier otra cabecera que necesites
+]
+
 if not DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
     CORS_ALLOW_HEADERS = ['*']
