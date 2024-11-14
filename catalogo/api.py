@@ -19,6 +19,5 @@ class UsuarioViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.AllowAny]
     serializer_class = UsuarioSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['correo']
-    filterset_fields = ['contrasena']
+    filterset_fields = ['correo', 'contrasena']
     
