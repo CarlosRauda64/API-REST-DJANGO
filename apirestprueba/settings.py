@@ -146,7 +146,7 @@ CORS_ORIGIN_WHITELIST = (
 )
 
 if not DEBUG:
-    CORS_ALLOW_ALL_ORIGINS = False
+    CORS_ALLOW_ALL_ORIGINS = True
     CORS_ALLOW_HEADERS = ['*']
     # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
