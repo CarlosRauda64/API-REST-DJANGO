@@ -1,6 +1,6 @@
-from .models import producto
+from .models import producto, usuario
 from rest_framework import viewsets, permissions
-from .serializers import ProductoSerializer
+from .serializers import ProductoSerializer, UsuarioSerializer
 
 class ProductoViewSet(viewsets.ModelViewSet):
     """
@@ -9,4 +9,12 @@ class ProductoViewSet(viewsets.ModelViewSet):
     queryset = producto.objects.all()
     permission_classes = [permissions.AllowAny]
     serializer_class = ProductoSerializer
+
+class UsuarioViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint que permite a los usuarios ser vistos o editados.
+    """
+    queryset = usuario.objects.all()
+    permission_classes = [permissions.AllowAny]
+    serializer_class = UsuarioSerializer
     

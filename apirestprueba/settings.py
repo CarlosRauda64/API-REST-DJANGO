@@ -61,10 +61,6 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ORIGIN_WHITELIST = (
-    'http://127.0.0.1:5500',
-)
-
 ROOT_URLCONF = 'apirestprueba.urls'
 
 TEMPLATES = [
@@ -143,7 +139,13 @@ STATIC_URL = '/static/'
 
 DEBUG = 'RENDER' not in os.environ
 
+CORS_ORIGIN_WHITELIST = (
+    'http://127.0.0.1:5500',
+)
+
 if not DEBUG:
+    CORS_ALLOW_ALL_ORIGINS = False
+    CORS_ALLOW_HEADERS = ['*']
     # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
